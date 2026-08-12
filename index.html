@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About You — The 1975. An interactive music video experience.">
+  <title>About You — The 1975</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Syne:wght@700;800&family=Fraunces:ital,opsz,wght@1,9..144,700&family=Space+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=17">
+</head>
+<body>
+  <!-- Film Strip Background -->
+  <div class="film-strip-scene" id="film-strip-scene">
+    <!-- Slanted Up Strip -->
+    <div class="film-strip-container slanted-up">
+      <div class="film-track" id="film-track-slanted-up"></div>
+    </div>
+    <!-- Slanted Down Strip -->
+    <div class="film-strip-container slanted-down">
+      <div class="film-track" id="film-track-slanted-down"></div>
+    </div>
+    <!-- Horizontal Strip -->
+    <div class="film-strip-container horizontal">
+      <div class="film-track" id="film-track-horizontal"></div>
+    </div>
+  </div>
+  <div class="cinematic-vignette"></div>
+  <div class="cinematic-grain"></div>
+
+  <!-- Infinite Canvas: virtual camera pans over all scenes -->
+  <div id="infinite-viewport">
+    <div id="infinite-camera">
+      <div id="infinite-canvas"></div>
+    </div>
+  </div>
+
+  <!-- Start Overlay -->
+  <div class="start-overlay" id="start-overlay">
+    <div class="player-card">
+      <div class="album-art-wrapper">
+        <img class="album-art" src="about.jpg" alt="About You — The 1975 Album Art">
+      </div>
+      <div class="track-info">
+        <h1 class="track-title">About You</h1>
+        <p class="track-artist">The 1975</p>
+      </div>
+      
+      <!-- Progress Section -->
+      <div class="card-progress-section">
+        <div class="card-time-row">
+          <span class="card-time" id="card-time-current">0:00</span>
+          <span class="card-time" id="card-time-total">-5:15</span>
+        </div>
+        <div class="card-progress-track" id="card-progress-track">
+          <div class="card-progress-fill" id="card-progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+      
+      <!-- Controls Section -->
+      <div class="card-controls-row">
+        <!-- Previous -->
+        <button class="card-control-btn" disabled>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="19 20 9 12 19 4 19 20"/>
+            <polygon points="9 20 1 12 9 4 9 20"/>
+          </svg>
+        </button>
+        <!-- Play -->
+        <button class="card-play-btn" id="start-btn">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="8 5 19 12 8 19 8 5"/>
+          </svg>
+        </button>
+        <!-- Next -->
+        <button class="card-control-btn" disabled>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 4 15 12 5 20 5 4"/>
+            <polygon points="15 4 25 12 15 20 15 4"/>
+          </svg>
+        </button>
+        <!-- Speaker/Bluetooth -->
+        <button class="card-control-btn" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Volume Section -->
+      <div class="card-volume-section">
+        <svg class="volume-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        </svg>
+        <div class="card-volume-track">
+          <div class="card-volume-fill" style="width: 70%;"></div>
+        </div>
+        <svg class="volume-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pause Indicator -->
+  <div class="pause-indicator" id="pause-indicator">
+    <svg width="24" height="24" viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+  </div>
+
+  <audio id="audio-player" preload="auto" src="about-you.mp3"></audio>
+  <script src="lyrics_data.js"></script>
+  <script src="app.js?v=26"></script>
+</body>
+</html>
